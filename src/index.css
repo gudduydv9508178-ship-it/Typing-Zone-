@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* 3D and tactile button styles for TypingClub Keyboard */
+.key-3d {
+  position: relative;
+  box-shadow: 0 4px 0 #d8cca8, 0 6px 12px rgba(20, 35, 75, 0.08);
+  transition: transform 0.06s cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 0.06s ease, background-color 0.1s ease, color 0.1s ease;
+  will-change: transform, box-shadow;
+  transform: translateY(0);
+}
+
+.key-3d:active,
+.key-3d.key-3d-pressed {
+  transform: translateY(3px) !important;
+  box-shadow: 0 1px 0 #d8cca8, 0 2px 4px rgba(20, 35, 75, 0.12) !important;
+}
+
+/* Active target key (TypingClub signature blue with 3D elevation) */
+.key-3d-target {
+  background-color: #2f7bff !important;
+  color: #ffffff !important;
+  border-color: #1e62db !important;
+  box-shadow: 0 4px 0 #185ec9, 0 0 20px rgba(47, 123, 255, 0.65) !important;
+}
+
+.key-3d-target:active,
+.key-3d-target.key-3d-pressed {
+  transform: translateY(3px) !important;
+  box-shadow: 0 1px 0 #185ec9, 0 0 10px rgba(47, 123, 255, 0.4) !important;
+}
+
+/* Keypress feedback: correct hit flash */
+.key-3d-success {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #059669 !important;
+  box-shadow: 0 2px 0 #047857, 0 0 14px rgba(16, 185, 129, 0.6) !important;
+  transform: translateY(2px) !important;
+}
+
+/* Keypress feedback: error hit flash */
+.key-3d-error {
+  background-color: #f43f5e !important;
+  color: #ffffff !important;
+  border-color: #e11d48 !important;
+  box-shadow: 0 2px 0 #be123c, 0 0 14px rgba(244, 63, 94, 0.6) !important;
+  transform: translateY(2px) !important;
+}
+
+.btn-3d-blue {
+  background-color: #2f7bff;
+  box-shadow: 0 5px 0 #1a56cc, 0 12px 20px rgba(47, 123, 255, 0.28);
+  transition: transform 0.1s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.1s ease;
+}
+
+.btn-3d-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #1a56cc, 0 16px 24px rgba(47, 123, 255, 0.32);
+}
+
+.btn-3d-blue:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #1a56cc, 0 4px 10px rgba(47, 123, 255, 0.2);
+}
+
+.btn-3d-white {
+  background-color: #ffffff;
+  color: #14224a;
+  box-shadow: 0 5px 0 #cbd7ec, 0 12px 20px rgba(20, 40, 90, 0.14);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-3d-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #cbd7ec, 0 16px 24px rgba(20, 40, 90, 0.18);
+}
+
+.btn-3d-white:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #cbd7ec, 0 4px 8px rgba(20, 40, 90, 0.1);
+}
+
+/* Floating animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes cloudDrift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(36px);
+  }
+}
+
+.animate-drift {
+  animation: cloudDrift 16s ease-in-out infinite alternate;
+}
+
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-caret {
+  animation: caretBlink 0.9s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

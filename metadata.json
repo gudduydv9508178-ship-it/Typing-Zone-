@@ -1,0 +1,6 @@
+{
+  "name": "Typing Zone - Learn Touch Typing for Free",
+  "description": "Learn touch typing online for free with Typing Zone. Engaging interactive lessons, 5-star scoring, WPM tracking, and school edition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
